@@ -10,8 +10,15 @@ namespace System
 
         protected override TSpawnObject SpawnInternal()
         {
-            var spawnedObject = _factory.Create();
-            _spawnedObjectsList.Add(spawnedObject);
+            var spawnedObject = TrySpawnFreeObjectFromPool(out var isFreeObjectInPool);
+
+            if (!isFreeObjectInPool)
+            {
+                spawnedObject = _factory.Create();
+                _spawnedObjectsList.Add(spawnedObject);
+            }
+
+            PositionInstance(spawnedObject.transform);
 
             OnObjectSpawned?.Invoke(spawnedObject);
 

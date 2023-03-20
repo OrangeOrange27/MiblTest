@@ -37,11 +37,6 @@ namespace Enemy
         }
         public void KillAllEnemies()
         {
-            foreach (var enemy in _enemySpawner.SpawnedObjectsList)
-            {
-                Destroy(enemy.gameObject);
-            }
-
             _enemySpawner.ClearSpawnedObjectsList();
         }
 

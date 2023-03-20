@@ -21,11 +21,6 @@ namespace Obstacles
 
         public void DestroyAllObstacles()
         {
-            foreach (var obstacle in _obstacleSpawner.SpawnedObjectsList)
-            {
-                Destroy(obstacle.gameObject);
-            }
-
             _obstacleSpawner.ClearSpawnedObjectsList();
         }
 
