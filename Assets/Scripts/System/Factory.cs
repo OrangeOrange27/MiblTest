@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace System
 {
-    public class Factory<T> : IFactory<T>
+    public class Factory<T>
         where T : MonoBehaviour
     {
         private readonly T _prefab;

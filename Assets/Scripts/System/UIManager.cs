@@ -8,7 +8,7 @@ namespace System
         [SerializeField] private UIController _uiController;
 
         public event Action OnRestartButtonPressedEvent;
-        
+
         public float LiveTimer { get; private set; }
 
         private void Awake()

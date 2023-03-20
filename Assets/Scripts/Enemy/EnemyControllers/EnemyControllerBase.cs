@@ -2,7 +2,8 @@ using UnityEngine;
 
 namespace Enemy
 {
-    public abstract class EnemyControllerBase : MonoBehaviour, IEnemyController
+    //abstraction to be able add new enemies easily
+    public abstract class EnemyControllerBase : MonoBehaviour
     {
         [SerializeField] protected float _speed;
 

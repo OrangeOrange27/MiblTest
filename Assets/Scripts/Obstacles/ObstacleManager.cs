@@ -8,16 +8,17 @@ namespace Obstacles
         [SerializeField] private ObstacleSpawner _obstacleSpawner;
 
         public event Action OnPlayerCollisionEvent;
-        
+
         public void StopSpawn()
         {
             _obstacleSpawner.StopSpawn();
         }
+
         public void StartSpawn()
         {
             _obstacleSpawner.StartSpawn();
         }
-        
+
         public void DestroyAllObstacles()
         {
             foreach (var obstacle in _obstacleSpawner.SpawnedObjectsList)
@@ -27,7 +28,7 @@ namespace Obstacles
 
             _obstacleSpawner.ClearSpawnedObjectsList();
         }
-        
+
         private void Awake()
         {
             _obstacleSpawner.OnObjectSpawned += OnObstacleSpawned;
